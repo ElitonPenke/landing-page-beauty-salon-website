@@ -62,6 +62,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--color-accent-da
 .cards { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
 .card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; }
 .card p { margin: 0; }
+.cards {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cards .card:nth-child(5) {
+  grid-column: 1 / -1;
+  width: calc(50% - .625rem);
+  justify-self: center;
+}
 
 /* Galeria */
 .gallery { display: grid; gap: 1rem; grid-template-columns: 1fr; }
@@ -79,10 +90,29 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--color-accent-da
 .site-footer { padding: 2.5rem 0 6rem; border-top: 1px solid var(--color-border); }
 .social { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; }
 .social-link { display: inline-flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .5rem 1rem; border: 2px solid var(--color-accent-dark); border-radius: .75rem; color: var(--color-accent-dark); font-weight: 700; text-decoration: none; }
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.social {
+  justify-content: center;
+}
 .footer-inner p { margin: 0; }
 
 /* Botão flutuante (só no celular) */
 .whatsapp-float { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; display: inline-flex; align-items: center; gap: .5rem; min-height: 3.5rem; padding: .75rem 1.25rem; border-radius: 2rem; background: var(--color-accent); color: var(--color-on-accent); font-weight: 700; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+
+.footer-credit {
+  margin-top: .5rem !important;
+  font-size: .875rem;
+}
+
+.footer-credit a {
+  color: var(--color-accent-dark);
+}
+
 
 /* Tablet */
 @media (min-width: 40rem) {
@@ -98,13 +128,30 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--color-accent-da
   .main-nav ul { display: flex; gap: 1.25rem; margin: 0; }
   .main-nav li a:not(.btn) { border: 0; }
   .main-nav .btn { width: auto; }
-  .cards { grid-template-columns: repeat(3, 1fr); }
   .gallery { grid-template-columns: repeat(3, 1fr); }
   .section { padding: 5rem 0; }
   .hero { padding: 6rem 0; }
   .whatsapp-float { display: none; }
   .site-footer { padding-bottom: 2.5rem; }
+  .cards {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
+
+.cards .card {
+  grid-column: span 2;
+}
+
+.cards .card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.cards .card:nth-child(5) {
+  grid-column: 4 / span 2;
+  width: auto;
+  justify-self: stretch;
+}
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
