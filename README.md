@@ -33,14 +33,6 @@ landing-page-beauty-salon-website/
 ├── LICENSE
 ├── README.md
 └── images/
-    ├── unhas-01-bordo-detalhe-marmorizado.jpg
-    ├── unhas-02-azul-brilho-prata.jpg
-    ├── unhas-03-vinho-brilhante.jpg
-    ├── unhas-04-rosa-pink.jpg
-    ├── unhas-05-azul-royal-glitter.jpg
-    ├── unhas-06-nude-glitter.jpg
-    ├── unhas-07-branco-leitoso.jpg
-    ├── unhas-08-vermelho-classico.jpg
-    └── unhas-09-perolado-cintilante.jpg# landing-page-beauty-salon-website
+    ├── unhas...
     
 Landing page for Katia's beauty salon: hair, nails, coloring and more. Responsive, with services, gallery and contact info.

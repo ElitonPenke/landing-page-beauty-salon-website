@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap');
 
 /* ===== CORES E FONTES: troque aqui para mudar o site inteiro ===== */
 :root {
@@ -15,25 +15,57 @@
   --sobre-botao: #1F1F1F;
   --titulo: "Fraunces", Georgia, "Times New Roman", serif;
   --texto: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --type-body: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --type-lead: clamp(1.16rem, 0.77rem + 1.05vw, 1.5rem);
+  --type-h1: clamp(2.7rem, 2rem + 4.2vw, 5rem);
+  --type-h2: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --type-h3: clamp(1.2rem, 1rem + 0.55vw, 1.5rem);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
-body { margin: 0; font-family: var(--texto); font-size: 1.125rem; line-height: 1.7; color: var(--tinta); background: var(--papel); overflow-x: hidden; }
+body {
+  margin: 0;
+  font-family: var(--texto);
+  font-size: var(--type-body);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  background: var(--papel);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
 img { max-width: 100%; height: auto; display: block; }
 ul { list-style: none; margin: 0; padding: 0; }
-h1, h2, h3 { font-family: var(--titulo); font-weight: 600; line-height: 1.15; margin: 0 0 1rem; letter-spacing: -0.01em; }
-h1 { font-size: clamp(2.6rem, 9vw, 4.75rem); }
-h2 { font-size: clamp(2rem, 6vw, 3rem); }
-h3 { font-size: 1.35rem; margin-bottom: .25rem; }
-p { margin: 0 0 1rem; }
+h1, h2, h3 {
+  font-family: var(--titulo);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+h1 { font-size: var(--type-h1); max-width: 10ch; }
+h2 { font-size: var(--type-h2); }
+h3 { font-size: var(--type-h3); margin-bottom: .25rem; letter-spacing: -0.04em; }
+p {
+  margin: 0 0 1rem;
+  max-width: 64ch;
+  text-wrap: pretty;
+}
 address { font-style: normal; }
 
 .container { width: 100%; max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
 .narrow { max-width: 42rem; }
 .section { padding: 4rem 0; }
 .section-soft { background: var(--rose); }
-.lead { font-size: 1.3rem; max-width: 30rem; margin-bottom: 2rem; }
+.lead {
+  font-size: var(--type-lead);
+  line-height: 1.55;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+  color: rgba(51, 32, 61, 0.8);
+}
 
 /* Ícones */
 .icon { width: 1.5rem; height: 1.5rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -69,7 +101,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--violeta); outli
 @keyframes entrada { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
 /* Sobre */
-#sobre p:first-of-type { font-family: var(--titulo); font-size: 1.5rem; line-height: 1.5; color: var(--ameixa); }
+#sobre p:first-of-type {
+  font-family: var(--titulo);
+  font-size: clamp(1.45rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  color: var(--ameixa);
+  max-width: 24ch;
+}
 
 /* Serviços: lista em fundo ameixa, uma coluna no celular */
 #servicos { background: var(--ameixa); color: #F3EAF8; }
